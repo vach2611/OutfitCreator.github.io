@@ -130,6 +130,7 @@ body{
 .filter-colors{
 	display: flex;
 	align-items: center;
+	padding-left: 15px;
 }
 .colors{
 	width: 30px;
