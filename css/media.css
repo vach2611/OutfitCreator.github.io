@@ -1,0 +1,46 @@
+@media screen and (max-width: 480px){
+	.creator-controls{
+		padding: 5px 15px;
+		top: -60px;
+	}
+	.controls>span{
+		display: none;
+	}
+	.controls>i{
+		font-size: 20px;
+	}
+	.controls{
+		padding: 15px;
+	}
+	.creator-filters-titles{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+	.creator-head{
+		background-size: contain;
+	}
+
+}
+
+
+@media screen and (max-width: 767px){
+	.more-filters-block{
+		flex-direction: column;
+		justify-content: center;
+	}
+	.filter-colors{
+		margin-bottom: 35px;
+	}
+	.filter-price{
+		flex-direction: column;
+	}
+	#priceUntil{
+		margin-bottom: 25px;
+	}
+	.creator-items, .categories{
+		justify-content: center;
+	}
+}

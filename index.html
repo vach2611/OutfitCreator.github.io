@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Outfit Creator</title>
+	<!-- <link rel="stylesheet" href="css/jquery-ui.min.css"> -->
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/godswearhats/jquery-ui-rotatable@1.1/jquery.ui.rotatable.css"> -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/media.css">
+
+	<link rel="stylesheet" href="css/reset.css">
+
+</head>
+<body>
+	<img src="img/preloader.gif" class="preloader" alt="">
+
+
+
+
+	<!-- Modal -->
+	 <div class="modal fade" id="myModal" role="dialog">
+	   <div class="modal-dialog">
+	   
+	     <!-- Modal content-->
+	     <div class="modal-content">
+	       <div class="modal-header">
+	         <button type="button" class="close" data-dismiss="modal">&times;</button>
+	       </div>
+	       <div class="modal-body">
+					<div class="creatorProdContainer">
+						<img src="img/bags/1.jpg" alt="">
+						<p class="prodModalInfo " >Product Name : <span class="creatorProdName" >bag</span></p>
+						<p class="prodModalInfo " >Product Price : <span class="creatorProdPrice" >1500</span>$</p>
+						<p class="prodModalInfo " >Product Old Price :<span class="creatorProdOldPrice" >2500</span>$</p>
+						<p class="prodModalInfo " >Saled Count : <span class="creatorSaledCount" >15000</span></p>
+						<button class="btn btn-primary" data-dismiss="modal">Buy Product</button>
+					</div>
+	       </div>
+	       <div class="modal-footer">
+	         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	       </div>
+	     </div>
+	     
+	   </div>
+	 </div>
+
+
+
+
+
+
+
+	 	<!-- Modal of Board -->
+	 <div class="modal fade" id="myModal2" role="dialog">
+	   <div class="modal-dialog">
+	   
+	     <!-- Modal content-->
+	     <div class="modal-content">
+	       <div class="modal-header">
+	         <button type="button" class="close" data-dismiss="modal">&times;</button>
+	       </div>
+	       <div class="modal-body">
+
+			<div id="boardFinally">
+
+				
+			</div>
+
+	       </div>
+	       <div class="modal-footer">
+				<div class="totalBuyingPrice">Totaly : <span>654531$</span></div>
+	         	<button type="button" class="btn btn-primary buyBTN" data-dismiss="modal">Buy</button>
+	       </div>
+	     </div>
+	     
+	   </div>
+	 </div>
+
+
+
+
+	 	<!-- Modal of Reset Board -->
+	 <div class="modal fade" id="myModal3" role="dialog">
+	   <div class="modal-dialog">
+	   
+	     <!-- Modal content-->
+	     <div class="modal-content">
+	       <div class="modal-header">
+	         <button type="button" class="close" data-dismiss="modal">&times;</button>
+	       </div>
+	       <div class="modal-body">
+				<h3 class="text-center" style="font-size: 22px;" >Do you Want Remove All Products on Board ?</h3>
+
+	       </div>
+	       <div class="modal-footer">
+	       	<button class="btn btn-success resetBoard" data-dismiss="modal">Yes</button>
+	       	<button class="btn btn-danger" data-dismiss="modal">No</button>
+	       </div>
+	     </div>
+	     
+	   </div>
+	 </div>
+
+
+
+
+
+
+
+	<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-12 main-block">
+						<div class="creator-header">
+							<div class="creator-buttons " title="Reset All" data-toggle="modal" data-target="#myModal3"><i class="fas fa-sync"></i></div>
+							<h5>Outfit Creator</h5>
+							<div class="creator-buttons saveBoard" title="Save It" data-toggle="modal" data-target="#myModal2"><i class="far fa-save"></i></div>
+						</div>
+						<div class="creator-head" style="background-image: url(img/creator-bg.jpg);">
+							
+							
+							<!-- <div >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quo ea commodi porro id, laboriosam.</div> -->
+
+<!-- 							<div  id="draggable" class="creatorManipulationProd">
+								<img src="img/bags/1.jpg" alt="">
+							</div>
+
+							<div  id="draggable" class="creatorManipulationProd">
+								<img src="img/bags/1.jpg" alt="">
+							</div> -->
+									
+
+
+						</div>
+						<div class="creator-body">
+							<div class="creator-controls hide">
+								<div class="controls forward"><i class="fas fa-chevron-up"></i><span>forward</span></div>
+								<div class="controls back"><i class="fas fa-chevron-down"></i><span>back</span></div>
+								<div class="controls clone"><i class="far fa-copy"></i><span>clone</span></div>
+								<div class="controls flip"><i class="fas fa-exchange-alt"></i><span>flip</span></div>
+								<div class="controls remove"><i class="fas fa-times"></i><span>remove</span></div>
+								<div class="controls info" data-toggle="modal" data-target="#myModal"><i class="fas fa-info"></i><span>info</span></div>
+							</div>
+							<div class="creator-filters">
+								<div class="creator-filters-titles">
+									<p class="CreatorTitles mostSaled active">Most Saled</p>
+									<p class="CreatorTitles category " >Category</p>
+									<p class="CreatorTitles forMen " data-gender="male">For Men</p>
+									<p class="CreatorTitles forWomen" data-gender="female" >For Women</p>
+								</div>
+								<div class="creator-filters-search">
+									<div class="searcher-container"><input type="text" placeholder="Write Name of Product" id="Searcher"></div>
+								</div>
+								<div class="creator-filters-more-filters">
+									<p class="moreFilters" ><i class="fas fa-sliders-h"></i> More Filters</p>
+								</div>
+									<div class="more-filters-block" style="display: none;">
+										<div class="filter-colors">
+											<p class="colors" data-color="red" ></p>
+											<p class="colors" data-color="gray" ></p>
+											<p class="colors" data-color="black" ></p>
+											<p class="colors" data-color="white" ></p>
+											<p class="colors" data-color="lightblue" ></p>
+											<p class="colors" data-color="brown" ></p>
+											<p class="colors" data-color="pink" ></p>
+											<p class="choosedColor"></p>
+										</div>
+
+										<div class="filter-price">
+											<span id="priceUntil" ><span class="" >Price Until :</span> <i></i> </span>
+											<input type="range" step="50" min="250" max="25000">
+										</div>
+									</div>
+							</div>
+							
+							<!-- For Category Name Temp Variable -->
+							<input type="hidden" id="tempName">
+
+							<!-- For Category Gender Temp Variable -->
+							<input type="hidden" id="tempGender">
+
+							<!-- For Product Selected Price -->
+							<input type="hidden" id="tempPrice">
+
+							<div class="categories" style="display: none;">
+
+							</div>
+
+							<div class="creator-items">
+							
+							
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+	</main>
+
+	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="js/jquery-ui.min.js" ></script>
+	<!-- <script src="https://cdn.jsdelivr.net/gh/godswearhats/jquery-ui-rotatable@1.1/jquery.ui.rotatable.min.js"></script> -->
+	<script src="js/jquery.ui.rotatable.min.js" ></script>
+	<script src="js/jquery.ui.touch-punch.min.js" ></script>
+	<!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script> -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="js/custom.js" ></script>
+
+</body>
+</html>
