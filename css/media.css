@@ -2,6 +2,7 @@
 	.creator-controls{
 		padding: 5px 15px;
 		top: -59px;
+		justify-content: center;
 	}
 	.controls>span{
 		display: none;
