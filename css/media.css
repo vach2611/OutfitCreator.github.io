@@ -22,7 +22,9 @@
 	.creator-head{
 		background-size: contain;
 	}
-
+	.prodNotFound{
+		font-size: 20px;
+	}
 }
 
 
