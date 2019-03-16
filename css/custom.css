@@ -471,6 +471,7 @@ input[type='range']::-webkit-slider-thumb::before {
 	bottom: 0;
 	right: 0;
 	z-index: 99999;
+	touch-action: none;
 }
 
 .hide{
