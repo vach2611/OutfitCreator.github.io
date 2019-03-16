@@ -539,6 +539,12 @@ $(function() {
 	// on click any category block this func. show us the selected categories products
 	$(document).on('click','.categoryBlock',function(){
 
+		//scroll to product list
+		$('html, body').animate({
+		    scrollTop: $(".creator-items").offset().top
+		}, 2000);
+
+
 		//any styles
 		$('.categoryBlock').removeClass('checkedCategory');
 		$('#tempPrice').val("");
@@ -614,8 +620,16 @@ $(function() {
 
 	// filter the products in selected color
 	$('.colors').click(function(){
+
+		//scroll to product list
+		$('html, body').animate({
+		    scrollTop: $(".creator-items").offset().top
+		}, 2000);
+
+
 		//style for another block which show us the selected color
 		$('.choosedColor').css('background-color',$(this).css('background-color'));
+
 		//bring the category block name for filter products inside it
 		var tempName = $('#tempName').val();
 
@@ -868,6 +882,17 @@ $(function() {
 
 
 
+	//scroll to the product list when clicking the category
+	$('.CreatorTitles ').click(function(){
+		// scroll to categories
+		//scroll to board
+		$('html, body').animate({
+		    scrollTop: $(".categories").offset().top
+		}, 2000);
+	});
+
+
+
 
 
 
@@ -878,6 +903,11 @@ $(function() {
 			// in the board can be only 3 products
 			if($('.creatorManipulationProd').length <= 2){
 
+				//scroll to board
+				$('html, body').animate({
+				    scrollTop: $(".creator-head").offset().top
+				}, 2000);
+				
 
 				//any styles for the selected product block
 				$(this).css('background','moccasin');
