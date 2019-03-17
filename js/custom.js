@@ -519,6 +519,9 @@ $(function() {
 			$('.prodLoader').remove();
 
 		},1000);
+
+
+
 	});
 
 	//call the func. in page start
@@ -882,15 +885,24 @@ $(function() {
 
 
 
-	//scroll to the product list when clicking the category
-	$('.CreatorTitles ').click(function(){
+	//scroll to the categories list when clicking the category
+	$('.category,.forMen,.forWomen').click(function(){
+
 		// scroll to categories
-		//scroll to board
 		$('html, body').animate({
 		    scrollTop: $(".categories").offset().top
 		}, 2000);
 	});
 
+
+	//scroll to the products list when clicking the category
+	$('.CreatorTitles.mostSaled').click(function(){
+		
+			// //scroll to product list
+			$('html, body').animate({
+			    scrollTop: $(".creator-items").offset().top
+			}, 2000);
+	});
 
 
 
