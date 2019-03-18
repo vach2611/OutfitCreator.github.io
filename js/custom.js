@@ -1307,9 +1307,9 @@ $('.buyBTN').click(function(){
 //main page preloader function
 setTimeout(function(){
 	$('.preloader').fadeOut();
-	enable_scroll();
-	enable_scroll_mobile();
 },1500);
+	enable_scroll_mobile();
+	enable_scroll();
 
 
 
