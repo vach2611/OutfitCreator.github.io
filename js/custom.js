@@ -1,4 +1,3 @@
-
 // Start of functions to Control Document Scroll
 var keys = [32,33,34,35,36,37,38,39,40];
 
@@ -54,7 +53,7 @@ function enable_scroll_mobile(){
 
 // disable the scroll for preloader 
 disable_scroll();
-
+disable_scroll_mobile();
 
 $(function() {
 
@@ -1309,6 +1308,7 @@ $('.buyBTN').click(function(){
 setTimeout(function(){
 	$('.preloader').fadeOut();
 	enable_scroll();
+	enable_scroll_mobile();
 },1500);
 
 
