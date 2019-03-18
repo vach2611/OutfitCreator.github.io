@@ -1,59 +1,57 @@
-// Start of functions to Control Document Scroll
-var keys = [32,33,34,35,36,37,38,39,40];
+// // Start of functions to Control Document Scroll
+// var keys = [32,33,34,35,36,37,38,39,40];
 
-function preventDefault(e) {
-  e = e || window.event;
-  if (e.preventDefault)
-      e.preventDefault();
-  e.returnValue = false;  
-}
+// function preventDefault(e) {
+//   e = e || window.event;
+//   if (e.preventDefault)
+//       e.preventDefault();
+//   e.returnValue = false;  
+// }
 
-function keydown(e) {
-    for (var i = keys.length; i--;) {
-        if (e.keyCode === keys[i]) {
-            preventDefault(e);
-            return;
-        }
-    }
-}
+// function keydown(e) {
+//     for (var i = keys.length; i--;) {
+//         if (e.keyCode === keys[i]) {
+//             preventDefault(e);
+//             return;
+//         }
+//     }
+// }
 
-function wheel(e) {
-  preventDefault(e);
-}
+// function wheel(e) {
+//   preventDefault(e);
+// }
 
-function disable_scroll() {
-  if (window.addEventListener) {
-      window.addEventListener('DOMMouseScroll', wheel, false);
-  }
-  window.onmousewheel = document.onmousewheel = wheel;
-  document.onkeydown = keydown;
-  disable_scroll_mobile();
-}
+// function disable_scroll() {
+//   if (window.addEventListener) {
+//       window.addEventListener('DOMMouseScroll', wheel, false);
+//   }
+//   window.onmousewheel = document.onmousewheel = wheel;
+//   document.onkeydown = keydown;
+//   disable_scroll_mobile();
+// }
 
-function enable_scroll() {
-    if (window.removeEventListener) {
-        window.removeEventListener('DOMMouseScroll', wheel, false);
-    }
-    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
-  	enable_scroll_mobile();
-}
+// function enable_scroll() {
+//     if (window.removeEventListener) {
+//         window.removeEventListener('DOMMouseScroll', wheel, false);
+//     }
+//     window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+//   	enable_scroll_mobile();
+// }
 
-// My improvement
+// // My improvement
 
-// MOBILE
-function disable_scroll_mobile(){
-  document.addEventListener('touchmove',preventDefault, false);
-}
-function enable_scroll_mobile(){
-  document.removeEventListener('touchmove',preventDefault, false);
-}
+// // MOBILE
+// function disable_scroll_mobile(){
+//   document.addEventListener('touchmove',preventDefault, false);
+// }
+// function enable_scroll_mobile(){
+//   document.removeEventListener('touchmove',preventDefault, false);
+// }
+// // End Of functions to control the scroll 
 
-
-// End Of functions to control the scroll 
-
-// disable the scroll for preloader 
-disable_scroll();
-disable_scroll_mobile();
+// // disable the scroll for preloader 
+// disable_scroll();
+// disable_scroll_mobile();
 
 $(function() {
 
@@ -1307,9 +1305,8 @@ $('.buyBTN').click(function(){
 //main page preloader function
 setTimeout(function(){
 	$('.preloader').fadeOut();
+
 },1500);
-	enable_scroll_mobile();
-	enable_scroll();
 
 
 

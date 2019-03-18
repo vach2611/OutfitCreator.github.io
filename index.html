@@ -15,8 +15,68 @@
 
 </head>
 <body>
-	<img src="img/preloader.gif" class="preloader" id="preloader" alt="">
 
+	<img src="img/preloader.gif" class="preloader" id="preloader" alt="">
+	<script type="text/javascript" >
+			// Start of functions to Control Document Scroll
+			var keys = [32,33,34,35,36,37,38,39,40];
+
+			function preventDefault(e) {
+			  e = e || window.event;
+			  if (e.preventDefault)
+			      e.preventDefault();
+			  e.returnValue = false;  
+			}
+
+			function keydown(e) {
+			    for (var i = keys.length; i--;) {
+			        if (e.keyCode === keys[i]) {
+			            preventDefault(e);
+			            return;
+			        }
+			    }
+			}
+
+			function wheel(e) {
+			  preventDefault(e);
+			}
+
+			function disable_scroll() {
+			  if (window.addEventListener) {
+			      window.addEventListener('DOMMouseScroll', wheel, false);
+			  }
+			  window.onmousewheel = document.onmousewheel = wheel;
+			  document.onkeydown = keydown;
+			  disable_scroll_mobile();
+			}
+
+			function enable_scroll() {
+			    if (window.removeEventListener) {
+			        window.removeEventListener('DOMMouseScroll', wheel, false);
+			    }
+			    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+			  	enable_scroll_mobile();
+			}
+
+			// My improvement
+
+			// MOBILE
+			function disable_scroll_mobile(){
+			  document.addEventListener('touchmove',preventDefault, false);
+			}
+			function enable_scroll_mobile(){
+			  document.removeEventListener('touchmove',preventDefault, false);
+			}
+			// End Of functions to control the scroll 
+
+
+
+
+			// disable the scroll for preloader 
+			disable_scroll();
+			disable_scroll_mobile();
+
+	</script>
 
 
 
@@ -197,6 +257,10 @@
 	<!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script> -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="js/custom.js" ></script>
+	<script type="text/javascript" >
+		enable_scroll_mobile();
+		enable_scroll();
+	</script>
 
 </body>
 </html>
